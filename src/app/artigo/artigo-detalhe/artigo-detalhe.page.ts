@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Artigo } from 'src/app/models/artigo';
+import { ArtigoService } from '../artigo.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-artigo-detalhe',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtigoDetalhePage implements OnInit {
 
-  constructor() { }
+  artigo: Artigo = new Artigo ();
+  
+  constructor(private serviceArtigo: ArtigoService,
+    private activateRoute: ActivatedRoute,
+    private route: Router)
+    
+    { }
 
   ngOnInit() {
   }
