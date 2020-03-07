@@ -5,7 +5,7 @@ export class Artigo{
         public autor: string,
         public data: string,
         public imgUrl: string,
-        public text: string
+        public texto: string
     ) {
 
     }
