@@ -13,13 +13,16 @@ export class ArtigoService {
     { id: 2, titulo:'4 exemplos de utilização do Google Maps/Geolocalização com Ionic', autor:'FELIPE FRANCO', data:'30/01/2018', imgUrl:'http://www.fabricadecodigo.com/wp-content/uploads/google-maps-e-geolocalizacao-com-ionic-350x230.png', texto:'<p>Nessa aula eu ou te mostrar 4 exemplos de utilização do Google Maps/Geolocalização com o Ionic.<br>Você vai aprender:</p>'},
     { id: 3, titulo:'Como criar um CRUD com Ionic e Firebase – Em alguns simples passos', autor:'FELIPE FRANCO', data:'30/01/2018', imgUrl:'http://www.fabricadecodigo.com/wp-content/uploads/crud-firebase-ionic-350x230.png', texto:'<p>Nessa vídeo aula eu mostro como criar um CRUD (CRUD significa, em inglês, Create, Read, Update e Delete e em português é Incluir, Alterar, Excluir e Consultar) com Ionic e Firebase Realtime Database&nbsp;<strong>usando a nova versão do AngularFire2 (5.0.0).&nbsp;</strong></p>'},
     { id: 4, titulo:'Consumindo API REST com Ionic – O guia absolutamente completo', autor:'FELIPE FRANCO', data:'30/01/2018', imgUrl:'http://www.fabricadecodigo.com/wp-content/uploads/http-rest-api-ionic-350x230.png', texto:'<p>Nessa vídeo aula eu vou mostrar como fazer requisições HTTP a uma API REST.<br> Esse exemplo é valido tanto para aplicações feitas com Angular e Ionic.<br> E também como paginar os resultados utilizando o&nbsp;InfiniteScroll.</p>'},
+    { id: 5, titulo:'Aquele teste para ver se deu certo', autor:'Deivis M', data:'2020', imgUrl:'https://assets.b9.com.br/wp-content/uploads/2012/08/023.jpg', texto:'<p> Aula com professor Fernando Senac Campinas &nbsp;.</p>'},
   ];
 
-getAll() {return this.artigos;
+getAll(){
+  
+  return this.artigos;
 }
-
-
-
-
+getById(id: number) {
+  const artigo = this.artigos.find( (value) => value.id == id);
+  return artigo;
+}
 
 }

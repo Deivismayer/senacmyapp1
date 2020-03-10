@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Artigo } from '../models/artigo';
 import { ArtigoService } from '../artigo/artigo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +12,16 @@ export class HomePage {
   
   artigos: Artigo []= [];
 
-  constructor(private serviceArtigo : ArtigoService) {
-    
-    
-    
-    
-  this.artigos = this.serviceArtigo.getAll();
+  constructor(
+    private serviceArtigo : ArtigoService,
+    public router: Router) {
+        
+      this.artigos = this.serviceArtigo.getAll();
+    }
 
-}
+    abrirArtigo(artigo: Artigo) {
+      this.router.navigate(['/artigo-detalhe', artigo.id]);
+    }
 
-}
-// 
+
+  }

@@ -13,12 +13,17 @@ export class ArtigoDetalhePage implements OnInit {
   artigo: Artigo = new Artigo ();
   
   constructor(private serviceArtigo: ArtigoService,
-    private activateRoute: ActivatedRoute,
-    private route: Router)
+    private activateRoute: ActivatedRoute)
     
     { }
 
   ngOnInit() {
+    const id =this.activateRoute.snapshot.paramMap.get("id");
+    if (id){
+
+      this.artigo = this.serviceArtigo.getById(parseInt(id));
+      return this.artigo
+    }
   }
 
 }

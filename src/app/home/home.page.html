@@ -8,13 +8,13 @@
 
 <ion-content [fullscreen]="true">
 <ion-list>
-  <button ion-item *ngFor="let artigo of artigos">
+  <button ion-item *ngFor="let artigo of artigos" (click)="abrirArtigo(artigo)" >
     <ion-card>
       <ion-card-header>
         <ion-card-subtitle>{{artigo.data}}</ion-card-subtitle>
         <ion-card-title>{{artigo.titulo}}</ion-card-title>
       </ion-card-header>
-      <img src="{{artigo.imgUrl}}">
+      <img [src]="artigo.imgUrl">
       <ion-card-content>
         <div [innerHTML]="artigo.texto"></div>
       </ion-card-content>
